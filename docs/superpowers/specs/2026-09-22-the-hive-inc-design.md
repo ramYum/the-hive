@@ -10,7 +10,7 @@
 
 The Hive, Inc. is a commercial, portrait-mode mobile idle/incremental game about building a beekeeping empire. It follows the proven mechanical structure of the idle-farm genre (the reference title is Egg, Inc.). Players release bees into hives, the bees make honey, a delivery fleet ships the honey for cash, and players reinvest in hives, fleet and research. They unlock more valuable honey tiers and periodically "Swarm" (prestige) for a permanent earnings bonus.
 
-**Originality rule (legal):** game mechanics and rules are not protected by copyright. Expression is: art, names, text, UI layout, number tables and audiovisual style. Every name, piece of flavor text, balance number, screen layout and art asset in The Hive, Inc. is our own. We do not copy the reference game's tables, research names, UI screens, currency names or art. Higgsfield prompts must not reference the reference game or use its screenshots.
+**Originality rule (revised 2026-09-22):** Mechanics and mathematical formulas may be used as references. Reference balance data from `.tmp/egg_inc_wiki.json` may be used for analysis and initial tuning, while all names, text, UI composition, artwork, audiovisual presentation, and final game identity remain original. Higgsfield prompts must not reference the reference game or use its screenshots.
 
 ## 2. Goals and success criteria
 
@@ -340,7 +340,7 @@ Placeholder art (flat colored shapes with labels) is used until each asset is de
 
 | Days | Engineering (Claude) | Owner actions |
 |---|---|---|
-| 1–2 | Godot project, data files, `sim/` with tests | Register Play Console ($25); recruit 12+ testers; create Firebase project (Blaze); make Higgsfield style samples |
+| 1–2 | **Android monetization spike on a physical device (signed build, Play Billing test product, AdMob rewarded test ad, UMP consent, pin versions)**; Godot project, data files, `sim/` with tests | Register Play Console ($25) on day 1 and set up internal testing + a test product; recruit 12+ testers; create Firebase project (Blaze); make Higgsfield style samples |
 | 3–7 | Apiary screen, release, hives, fleet, honey tiers, research, local save, offline | Review builds; start hive/bee/background art |
 | 8–9 | Swarm, epic, boosts, pests, Welcome Back; signed AAB → **closed test starts (≈ day 9)** | Invite testers; set up AdMob account |
 | 10–16 | Firebase auth/save/Remote Config, AdMob rewarded ads, tutorial, first art swap | Deliver art batches; set up Play Billing products |
@@ -356,7 +356,7 @@ Placeholder art (flat colored shapes with labels) is used until each asset is de
 | Risk | Mitigation |
 |---|---|
 | The Play review for production access takes longer than 7 days | Start the closed test by day 9; keep the build stable during review |
-| Godot mobile plugins (AdMob, Billing) break on the current Godot version | Test the plugins in week 1 with a throwaway spike; pin plugin and engine versions |
+| Godot mobile plugins (AdMob, Billing) break on the current Godot version | Monetization spike on days 1–2 on a physical device (see §12 and roadmap.md); pin plugin and engine versions |
 | Inconsistent AI art | Style guide plus reference sheet; a consistent seed and prompt template; placeholders let the game ship even if art lags |
 | Economy too fast or slow | Pacing bot tests, plus Remote Config tuning during the closed test |
 | Scope creep | Non-goals list (§2) is binding for v1.0 |
